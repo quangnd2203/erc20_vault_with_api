@@ -1,0 +1,11 @@
+{
+  "dev": {},
+  "bscTestnet": {
+    "Forwarder": "0x7669a78AEaB96ed80c7619BEAf907caC6320e9D8",
+    "PeopleCoin": "0xb521E9436142aCf59b1944A323fde97289C21642"
+  },
+  "bscMainnet": {
+    "Forwarder": "0xA8674D81A9200546d832D0B49721baE7EfEB93a5",
+    "PeopleCoin": "0xa5aFeBa0018a6fDa96712126ce346C007F000B26"
+  }
+}

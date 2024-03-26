@@ -1,0 +1,37 @@
+version: '3'
+services:
+  #SmartContracts
+  smart_contract:
+    container_name: smart_contract
+    build:
+      context: .
+      dockerfile: .docker/smart_contract/DockerFile
+    ports:
+      - 3001:8545
+    volumes: 
+      - ./smart_contract:/smart_contract
+    tty: true
+    environment: 
+      - TZ=Asia/HoChiMinh
+    networks:
+      - contracts-network
+  
+  #Server
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: .docker/api/DockerFile
+    ports: 
+      - 3000:3000
+    depends_on:
+      - smart_contract
+    volumes:
+      - ./api:/api
+    networks:
+      - contracts-network
+
+#Docker Networks
+networks:
+  contracts-network:
+    driver: bridge

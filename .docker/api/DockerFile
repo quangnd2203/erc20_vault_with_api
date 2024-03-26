@@ -1,0 +1,12 @@
+FROM node:18-alpine
+
+WORKDIR /api
+
+EXPOSE 3000
+
+COPY ./api .
+
+RUN apk update && \
+    apk add git
+
+RUN npm install

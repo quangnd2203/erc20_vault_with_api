@@ -1,0 +1,8 @@
+install:
+	docker-compose up -d
+
+exec-server:
+	docker exec -it server /bin/sh
+
+exec-smart-contract:
+	docker exec -it smart_contract /bin/sh
